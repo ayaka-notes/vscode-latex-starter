@@ -1,0 +1,16 @@
+{
+    "name": "TeX Live",
+    "image": "ghcr.io/xu-cheng/texlive-full:latest",
+    // "dockerFile": "Dockerfile",
+    "customizations": {
+        "vscode": {
+            "extensions": ["james-yu.latex-workshop"]
+        }
+    },
+    // 注意，如果你开了网络代理，一定要把这个加上去
+    "build": {
+        "args": {
+            "network": "host"
+        }
+    }
+}
