@@ -1,46 +1,192 @@
-\documentclass[12pt]{article}
-\usepackage{lingmacros}
-\usepackage{tree-dvips}
+%  
+% ayaka-notes © Github 保留源代码所有权利
+% ayaka-notes © Github All Right Reserved
+%
+
+% openany可以节约纸张，
+% 如果没有openany chapter每次都是从奇数页开始，会很浪费
+\documentclass[UTF8,openany]{ctexbook}
+
+% 语言设置哦
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[UTF8, scheme = plain]{ctex}
+\usepackage{lipsum}
+
+% tabularx 用于创建自动调整列宽的表格。它提供了一个新的表格环境 tabularx，其中的某些列可以根据需要自动调整宽度，以确保整个表格适应给定的总宽度。
+% \begin{tabularx}{\textwidth}{|X|X|X|}
+% \end{tabularx}
+\usepackage{tabularx}
+
+% 特殊符号字体，比如 π 就是的
+\usepackage{pifont}
+
+\usepackage{caption}
+\usepackage[dvipsnames]{xcolor}  % 更全的色系
+\usepackage{listings}  % 排代码用的宏包
+
+% 这个是代码块的配置，我自己比较喜欢的模版，淡黄背景
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% listings设置
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\lstset{
+    % language = R,
+    backgroundcolor = \color{yellow!10},    % 背景色：淡黄
+    basicstyle = \small\ttfamily,           % 基本样式 + 小号字体
+    rulesepcolor= \color{gray},             % 代码块边框颜色
+    breaklines = true,                  % 代码过长则换行
+    numbers = left,                     % 行号在左侧显示
+    numberstyle = \small,               % 行号字体
+    keywordstyle = \color{blue},            % 关键字颜色
+    commentstyle =\color{teal},        % 注释颜色
+    stringstyle = \color{red!100},          % 字符串颜色
+    frame = shadowbox,                  % 用（带影子效果）方框框住代码块
+    showspaces = false,                 % 不显示空格
+    columns = fixed,                    % 字间距固定
+    %escapeinside={<@}{@>}              % 特殊自定分隔符：<@可以自己加颜色@>
+    morekeywords = {as},                % 自加新的关键字（必须前后都是空格）
+    deletendkeywords = {compile}        % 删除内定关键字；删除错误标记的关键字用deletekeywords删！
+}
+
+% 设置的纸张大小、边距信息
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[a4paper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+
+% 可以自动分页的长表格
+\usepackage{longtable}
+
+% graphicx 主要用于插入和处理图形 使用方法是
+% \includegraphics[width=0.8\textwidth]{filename}
+\usepackage{graphicx}
+\usepackage[colorlinks=true]{hyperref} 
+% linkcolor=pink
+
+
+% 文字下划线
+\usepackage{xeCJKfntef}
+
+% 随机文本生成
+\usepackage{zhlipsum}
+
+% 公式多列展示
+\usepackage{multicol}
+
+
+% 矩阵画虚线
+\usepackage{amsmath}
+% 同时需要导入arydshln宏包
+\usepackage{arydshln} 
+
+
+% 画函数图像
+\usepackage{pgfplots}
+\usepackage{tikz}
+
+% 积分的时候带圆圈的积分符号
+\usepackage{esint}
+
+
+% 用于在页面上添加内容，封面的方框就是用的这个
+\usepackage{atbegshi}
+
+
+% 空集符号
+\usepackage{amssymb}
+
+% 并排显示图片，列表，是一个分栏的功能
+\usepackage{subcaption}
+
+% 限制图片或者表格在文字下方
+\usepackage{float}
+
+% 圆圈的数字
+\usepackage{circledsteps}
+
+% quote环境设置
+\usepackage{etoolbox}
+
+% 表格里面合并单元格用到的
+\usepackage{multirow}
+
+% 修改 quote 环境的定义以包括楷体字体和下划线
+\AtBeginEnvironment{quote}{\kaishu}
+
+\pgfplotsset{compat=1.18} 
+
+% 确保part一定要是在奇数页面
+\let\originalpart=\part
+\def\part{\cleardoublepage\originalpart}
+
+% 元数据，作者和标题
+\title{\heiti 文章的标题\\ 副标题}
+\author{\itshape \href{https://github.com/ayaka-notes}{ayaka-notes}}
+
+% 支持原生的汉字公式
+\xeCJKsetup{CJKmath=true}
+
 \begin{document}
 
-\section*{Notes for My Paper}
-
-Don't forget to include examples of topicalization.
-They look like this:
-
-{\small
-\enumsentence{Topicalization from sentential subject:\\ 
-\shortex{7}{a John$_i$ [a & kltukl & [el & 
-  {\bf l-}oltoir & er & ngii$_i$ & a Mary]]}
-{ & {\bf R-}clear & {\sc comp} & 
-  {\bf IR}.{\sc 3s}-love   & P & him & }
-{John, (it's) clear that Mary loves (him).}}
+ % 封面
+\AtBeginShipoutNext{
+    \AtBeginShipoutAddToBox{
+        \fbox{% 
+            \parbox{4.9cm}{% 
+                \raggedright % 左对齐文本
+                Github \copyright Ayaka-notes \the\year  \\ 
+                请勿用于商业印刷或出版用途
+            }%
+        }%
+    }
 }
 
-\subsection*{How to handle topicalization}
+\maketitle
 
-I'll just assume a tree structure like (\ex{1}).
 
-{\small
-\enumsentence{Structure of A$'$ Projections:\\ [2ex]
-\begin{tabular}[t]{cccc}
-    & \node{i}{CP}\\ [2ex]
-    \node{ii}{Spec} &   &\node{iii}{C$'$}\\ [2ex]
-        &\node{iv}{C} & & \node{v}{SAgrP}
-\end{tabular}
-\nodeconnect{i}{ii}
-\nodeconnect{i}{iii}
-\nodeconnect{iii}{iv}
-\nodeconnect{iii}{v}
-}
-}
+% % 文档的前言部分
+% \frontmatter 
+% 如需序言在这里加 \chapter{序言}
 
-\subsection*{Mood}
 
-Mood changes when there is a topic, as well as when
-there is WH-movement.  \emph{Irrealis} is the mood when
-there is a non-subject topic or WH-phrase in Comp.
-\emph{Realis} is the mood when there is a subject topic
-or WH-phrase.
+% 切换到正文部分
+% \mainmatter
+
+% 目录
+\tableofcontents
+
+
+% 实际编写中，请使用分文件编写哦！
+% 我这里只是一个Demo！
+\part{第一部分的标题}
+
+\chapter{第一章的标题}
+
+\section{第一节的标题}
+
+\subsection{第一小节的标题}
+
+小车正穿行在落基山脉的蜿蜒曲折的盘山公路上，克利斯朵夫·李维静静地望着窗外，发现每当车子即将行驶到无路的关头，路边都会出现一块交通指示牌∶“前方转弯！”或“注意！急转弯”。而拐过每一道弯之后，前方照例又是一片柳暗花明、豁然开朗。山路弯弯，峰回路转，“前方转弯”几个大字一次次地冲击着他的眼球，也渐渐叩开了他的心扉：原来，不是路已到了尽头，而是该转弯了。 路在脚下，更在心中，心随路转，心路常宽。学会转弯也是人生的智慧，因为挫折往往是转折，危机同时是转机。
+
+M: Excuse me. Can you tell me how much the shirt is ?
+
+W: Yes, it’s nine fifteen.
+
+\subsection{第二小节的标题}
+
+这是一个行间的公式
+$$
+1+1 = 2
+$$
+
+这是一个行内公式$1+1=2$
+
+\subsection{第三小节的标题}
+
+「雪霁银妆素，桔高映琼枝」
+
+
+
+
+
 
 \end{document}
