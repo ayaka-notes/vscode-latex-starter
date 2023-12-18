@@ -4,7 +4,7 @@
     // "dockerFile": "Dockerfile",
     "customizations": {
         "vscode": {
-            "extensions": ["james-yu.latex-workshop"]
+            "extensions": ["james-yu.latex-workshop"],
         }
     },
     // 注意，如果你开了网络代理，一定要把这个加上去
@@ -12,5 +12,6 @@
         "args": {
             "network": "host"
         }
-    }
+    },
+    "postAttachCommand": "cp ./vscode/settings.json /U"
 }
