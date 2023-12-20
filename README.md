@@ -27,3 +27,7 @@ Latex，启动！轻松在VSCode里面用容器编写Latex！
 > 解决方案：打开Codespace[管理链接](https://github.com/codespaces)，然后Delete，如下所示。
 > ![image](https://github.com/Musicminion/vscode-latex-starter/assets/84625273/a6816330-f87c-43ff-ae13-b69a2c93bc04)
 
+> 常见问题03：启动时候非常卡，要等好久才可以编译，为什么？
+> 
+> 解决方案：Github的Codespace会自动同步你的VS Code的插件信息，并且安装，请耐心等待，如果不希望同步，请卸载部分不需要用到的插件/关闭VSCode配置同步。
+
