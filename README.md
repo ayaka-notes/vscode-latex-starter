@@ -4,6 +4,8 @@ Latex，启动！轻松在VSCode里面用容器编写Latex！
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/Musicminion/vscode-latex-starter)
 
+![](./effect-image.jpeg)
+
 ## 启动寄巧
 
 ### 使用Github CodeSpace
