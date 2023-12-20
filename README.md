@@ -10,14 +10,20 @@ Latex，启动！轻松在VSCode里面用容器编写Latex！
 
 ### 使用Github CodeSpace
 
-如下所示，点击上面的 Create Codespace按钮，然后等待Github Codespace自动拉取容器，创建环境。这一步时间比较久。然后点击任意一个tex文件，或者创建任意一个tex文件，激活TexWorkshop拓展！接下来就可以愉快的 $\LaTeX\$
-
-
-> 常见问题01：没有看到Tex的选项卡怎么办？
-> 
-> 解决方案01：打开任意一个`.tex`的文件就可以**激活插件**
+如下所示，点击上面的 Create Codespace按钮，然后等待Github Codespace自动拉取容器，创建环境。这一步时间比较久。然后点击任意一个tex文件，或者创建任意一个tex文件，激活TexWorkshop拓展！接下来就可以愉快的 $\LaTeX\$。
 
 ### 使用本地VS Code
 
 在本地VSCode里面克隆仓库。
+
+
+### 常见问题
+> 常见问题01：没有看到Tex的选项卡怎么办？
+> 
+> 解决方案：打开任意一个`.tex`的文件就可以**激活插件**
+
+> 常见问题02：如何删除Codespace？避免计费
+> 
+> 解决方案：打开Codespace[管理链接](https://github.com/codespaces)，然后Delete，如下所示。
+> ![image](https://github.com/Musicminion/vscode-latex-starter/assets/84625273/a6816330-f87c-43ff-ae13-b69a2c93bc04)
 
