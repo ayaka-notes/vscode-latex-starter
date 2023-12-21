@@ -12,6 +12,5 @@
         "args": {
             "network": "host"
         }
-    },
-    "postAttachCommand": "cp ./vscode/settings.json /U"
+    }
 }
