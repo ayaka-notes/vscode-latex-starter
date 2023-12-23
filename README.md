@@ -2,7 +2,7 @@
 Latex，启动！轻松在VSCode里面用容器编写Latex！
 > 注意：本仓库带有Codespace的Cache缓存，**点击下面的链接**可以实现毫秒级光速Codespace启动！无需等待拉取Docker镜像。
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/Musicminion/vscode-latex-starter)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/Musicminion/vscode-latex-starter?skip_quickstart=true)
 
 ![](./effect-image.jpeg)
 
