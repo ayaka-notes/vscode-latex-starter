@@ -2,7 +2,7 @@
 Latex，启动！轻松在VSCode里面用容器编写Latex！
 > 注意：本仓库带有Codespace的Cache缓存，**点击下面的链接**可以实现毫秒级光速Codespace启动！无需等待拉取Docker镜像。
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/Musicminion/vscode-latex-starter)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/Musicminion/vscode-latex-starter?skip_quickstart=true)
 
 ![](./effect-image.jpeg)
 
@@ -10,7 +10,10 @@ Latex，启动！轻松在VSCode里面用容器编写Latex！
 
 ### 使用Github CodeSpace
 
-如下所示，点击上面的 Create Codespace按钮，然后等待Github Codespace自动拉取容器，创建环境。这一步时间比较久。然后点击任意一个tex文件，或者创建任意一个tex文件，激活TexWorkshop拓展！接下来就可以愉快的 $\LaTeX\$。
+如下所示，点击上面的 Create Codespace按钮，然后根据需要，选择您的机器配置，单机创建后等待Github Codespace自动拉取容器，创建环境。这一步时间比较久。然后点击任意一个tex文件，或者创建任意一个tex文件，激活TexWorkshop拓展！接下来就可以愉快的 $\LaTeX\$。
+
+![screenshot20231223_副本](https://github.com/Musicminion/vscode-latex-starter/assets/84625273/a10dfdb5-fb2d-499b-8501-7f60b35a1192)
+
 
 ### 使用本地VS Code
 
