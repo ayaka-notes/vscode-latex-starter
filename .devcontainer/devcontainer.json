@@ -1,6 +1,6 @@
 {
     "name": "TeX Live",
-    "image": "ghcr.io/xu-cheng/texlive-full:latest",
+    "image": "musicminion/texlive:2023",
     // "dockerFile": "Dockerfile",
     "customizations": {
         "vscode": {
